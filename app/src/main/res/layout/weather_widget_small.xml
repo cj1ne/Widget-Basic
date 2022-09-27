@@ -17,7 +17,7 @@
             android:id="@+id/today_weather_icon"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            tools:src="@drawable/ic_weather_mostly_cloudy" />
+            android:src="@drawable/ic_weather_mostly_cloudy" />
 
         <TextView
             android:id="@+id/today_temperature"
@@ -26,9 +26,9 @@
             android:layout_marginHorizontal="10dp"
             android:ellipsize="end"
             android:maxLines="1"
+            android:text="@string/app_widget_fake_temperature"
             android:textSize="25sp"
-            android:textStyle="bold"
-            tools:text="14°" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/region_name"
@@ -37,9 +37,9 @@
             android:layout_weight="1"
             android:ellipsize="end"
             android:maxLines="1"
+            android:text="@string/app_widget_fake_region"
             android:textAlignment="textEnd"
-            android:textSize="18sp"
-            tools:text="Seoul" />
+            android:textSize="18sp" />
 
     </LinearLayout>
 
@@ -56,8 +56,8 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="1"
-            android:textSize="12sp"
-            tools:text="16°" />
+            android:text="@string/app_widget_fake_am_temperature"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/pm_temperature"
@@ -66,8 +66,8 @@
             android:layout_marginStart="5dp"
             android:ellipsize="end"
             android:maxLines="1"
-            android:textSize="12sp"
-            tools:text="10°" />
+            android:text="@string/app_widget_fake_pm_temperature"
+            android:textSize="12sp" />
 
     </LinearLayout>
 
