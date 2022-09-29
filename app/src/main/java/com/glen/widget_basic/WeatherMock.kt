@@ -4,9 +4,15 @@ import kotlin.random.Random
 
 object WeatherMock {
 
-    private val weathers = mutableListOf<WeatherInfo>()
+    private val weathers = mutableListOf(
+        getWeatherInfo("Seoul"),
+        getWeatherInfo("New York"),
+        getWeatherInfo("London"),
+        getWeatherInfo("Paris")
+    )
+    var region: String = "Seoul"
 
-    fun getWeather(): WeatherInfo = weathers.first()
+    fun getWeather(): WeatherInfo = weathers.find { it.region == this.region } ?: weathers.first()
 
     fun updateWeather() {
         weathers.clear()

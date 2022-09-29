@@ -17,7 +17,7 @@ class WeatherWidget : AppWidgetProvider() {
         // There may be multiple widgets active, so update all of them
         WeatherMock.updateWeather()
         for (appWidgetId in appWidgetIds) {
-            updateAppWidget(context, appWidgetManager, appWidgetId, WeatherMock.getWeather())
+            updateAppWidget(context, appWidgetManager, appWidgetId)
         }
     }
 
@@ -27,7 +27,7 @@ class WeatherWidget : AppWidgetProvider() {
         appWidgetId: Int,
         newOptions: Bundle?,
     ) {
-        updateAppWidget(context, appWidgetManager, appWidgetId, WeatherMock.getWeather(), newOptions)
+        updateAppWidget(context, appWidgetManager, appWidgetId, newOptions)
     }
 
     override fun onEnabled(context: Context) {
@@ -43,9 +43,10 @@ internal fun updateAppWidget(
     context: Context,
     appWidgetManager: AppWidgetManager,
     appWidgetId: Int,
-    weatherInfo: WeatherInfo,
     newOptions: Bundle? = null
 ) {
+    val weatherInfo = WeatherMock.getWeather()
+
     // Construct the RemoteViews object
     val widgetOptions = newOptions ?: appWidgetManager.getAppWidgetOptions(appWidgetId)
     val remoteView = if (widgetOptions.getInt(AppWidgetManager.OPTION_APPWIDGET_MAX_HEIGHT) < 120) {

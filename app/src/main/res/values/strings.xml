@@ -5,4 +5,5 @@
     <string name="app_widget_fake_temperature">14°</string>
     <string name="app_widget_fake_am_temperature">10°</string>
     <string name="app_widget_fake_pm_temperature">16°</string>
+    <string name="app_widget_configure_description">Select region for weather widget</string>
 </resources>
